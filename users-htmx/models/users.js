@@ -3,7 +3,7 @@ const fs = require('fs'); //Encontrar archivos fuera de la carpeta
 const { get } = require('http');
 const path = require('path'); //Resolver rutas
 
-const initSQL =fs.readFileSync(path.join(__dirname, '../init.sql'), 'utf8'); 
+const initSQL = fs.readFileSync(path.join(__dirname, '../init.sql'), 'utf8'); 
 
 // Si no existe la base de datos, la crea
 if(!fs.existsSync(path.join(__dirname, '../users.db'))){
@@ -30,8 +30,16 @@ const addUser = (nombre, pass) => {
     return "Usuario añadido correctamente";
 }
 
+//Funcion para eliminar todos los usuarios
+const deleteAllUsers = () => {
+    const query = db.prepare('DELETE FROM usuarios');
+    query.run();
+    return "Todos los usuarios han sido eliminados";
+}
+
 // El módulo exports es un objeto que se puede usar para exportar funciones, objetos o variables
 module.exports = {
     getAllUsers,
-    addUser
+    addUser,
+    deleteAllUsers
 }

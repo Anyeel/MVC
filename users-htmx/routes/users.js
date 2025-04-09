@@ -1,4 +1,4 @@
-const { getAllUsers, addUser } = require("../models/users"); // Importar las funciones de users.js
+const { getAllUsers, addUser, deleteAllUsers } = require("../models/users"); // Importar las funciones de users.js
 
 const express = require("express");
 const router = express.Router();
@@ -22,6 +22,12 @@ router.post("/users", (req, res) => {
     const pass = req.body.pass;
     addUser(nombre, pass);
     res.send("Usuario añadido correctamente");
+});
+
+// Endpoint para eliminar todos los usuarios
+router.delete("/users", (req, res) => {
+    deleteAllUsers();
+    res.send("Todos los usuarios han sido eliminados");
 });
 
 module.exports = router;
