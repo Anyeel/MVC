@@ -19,8 +19,15 @@
         <button type="submit">Registrar</button>
     </form>
     <div id="mensaje-resultado"></div>
-    <button hx-get="/users" hx-target="div[hx-get]" hx-trigger="click">Actualizar</button>
-    <div hx-get="/users" hx-swap="innerHTML" hx-trigger="load"></div>
+
+    <button hx-get="/users?format=json" hx-target="#usuarios-json" hx-trigger="click">Mostrar en JSON</button>
+    <button hx-get="/users?format=list" hx-target="#usuarios-lista" hx-trigger="click">Mostrar en Lista</button>
+    <button hx-get="/users?format=table" hx-target="#usuarios-tabla" hx-trigger="click">Mostrar en Tabla</button>
+
+    <div id="usuarios-json" style="margin-top: 20px; white-space: pre-wrap; background-color: #f9f9f9; padding: 10px; border: 1px solid #ccc;"></div>
+    <div id="usuarios-lista" style="margin-top: 20px;"></div>
+    <div id="usuarios-tabla" style="margin-top: 20px;"></div>
+
     <button hx-delete="/users" hx-target="#mensaje-resultado" hx-confirm="¿Estás seguro de que deseas borrar la base de datos?">Eliminar base de datos</button>
 </body>
 </html>
