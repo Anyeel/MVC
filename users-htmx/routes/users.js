@@ -1,4 +1,4 @@
-const { getAllUsers, addUser, deleteAllUsers } = require("../models/users"); // Importar las funciones de users.js
+const { getAllUsers, addUser, deleteAllUsers, escapeHtmlText } = require("../models/users"); // Importar las funciones de users.js
 
 const express = require("express");
 const router = express.Router();
@@ -10,7 +10,7 @@ const router = express.Router();
 // La respuesta se envía en formato JSON
 router.get("/users", (req, res) => {
     const users = getAllUsers();
-    const format = req.query.format;
+    const format = escapeHtmlText(req.query.format);
 
     if (format === "list") {
         const listHTML = users.map(user => `<li>${user.nombre}</li>`).join("");
