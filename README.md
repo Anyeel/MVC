@@ -1,7 +1,7 @@
 # MVC
-- Modelo -> (Funciones/Clases || interactuar db)
+- Modelo -> (Funciones/Clases || interactuar db) singular "user.js"
 - Vista -> (Como se ve, html, chart, videojuegos...)
-- Controlador -> (Rutas que el usuario debe seguir, hace uso de las funciones)
+- Controlador -> (Rutas que el usuario debe seguir, hace uso de las funciones) plural "users.js"
 
 ## Creamos el SQL
 ```sql
