@@ -1,7 +1,7 @@
 # MVC
 - Modelo -> (Funciones/Clases || interactuar db)
-- Vista -> (Como se ve)
-- Controlador -> (Rutas que el usuario debe seguir)
+- Vista -> (Como se ve, html, chart, videojuegos...)
+- Controlador -> (Rutas que el usuario debe seguir, hace uso de las funciones)
 
 ## Creamos el SQL
 ```sql
